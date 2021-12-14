@@ -80,7 +80,6 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
@@ -103,8 +102,8 @@ dist
 # TernJS port file
 .tern-port
 
-# ignore all files in dist folder
+# Ignore all files in dist folder
 dist/*
 
-# not ignore snowflake.png
+# Do not ignore snowflake.png
 !dist/snowflake.png
