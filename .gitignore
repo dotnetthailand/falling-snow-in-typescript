@@ -105,5 +105,6 @@ typings/
 # Ignore all files in dist folder
 dist/*
 
-# Do not ignore snowflake.png
+# Do not some files in dist folder
 !dist/snowflake.png
+!dist/index.html

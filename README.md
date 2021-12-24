@@ -20,20 +20,20 @@
 -   We think snowing has falling pattern like sin graph.
 -   Let's start by plotting y = sin(x)
 
-y = sin(x)
+## y = sin(x)
 
 ![y = sin(x)](<y=sin(x).png>)
 
--   As you can see, this is not right.
--   Falling of snow is inverse of relationship y = sin(x)
--   Swap y and x in the equation.
--   Therefore, inverse of relationship y = sin(x) is x = sin(y)
+- As you can see, this is not right.
+- Falling of snow is an inversion of relationship `y = sin(x)`.
+- Swap y and x in the equation.
+- Therefore, the inversion of the relationship `y = sin(x)` is `x = sin(y)`.
 
-x = sin(y)
+## x = sin(y)
 
 ![x=sin(y)](<x=sin(y).png>)
 
-## The equation of our falling snow is **x = sin(y)**.
+> The equation of our falling snow is **x = sin(y)**.
 
 ---
 
@@ -55,11 +55,14 @@ x = 1/2sin(y)
 
 ## Adjust period
 
-x = sin(2πy)
+### x = sin(2πy)
+
+If y equal 1, it take two PI periods.
 
 ![x = sin(2πy)](<x=sin(y)-period.png>)
 
-x = sin(π/2y)
+### x = sin(π/2y)
+If y equal 1, it takes half of PI period.
 
 ![x = sin(π/2y)](<x=sin(y)-period-2.png>)
 
@@ -73,4 +76,4 @@ x = sin(π/2y)
 # Credit
 
 -   Original code from [https://yagudaev.com/posts/snow-in-javascript/](https://yagudaev.com/posts/snow-in-javascript/)
--   [Master Off for explaing me inverse function and sin graph](https://www.facebook.com/athum.thum)
+-   [Master Off for explaining me the inversion function and sin graph](https://www.facebook.com/athum.thum)

@@ -1,4 +1,4 @@
-import './snow.html';
+import React, { useEffect, useRef } from 'react';
 
 const MAX_SPEED = 10;
 const MIN_SPEED = 5;
@@ -59,7 +59,7 @@ class SnowFlake {
   private animation(
     sinGraph: (yValue: number, adjustedWaveHeight: number, adjustedWaveLength: number) => number,
   ) {
-    this.y += this.speed; // Keeep increasing y value with small amount or big amount of speed value.
+    this.y += this.speed; // Keep increasing y value with small amount or big amount of speed value.
 
     if (this.pathWidth !== 0 && this.pathHeight !== 0) {
       this.x = sinGraph(this.y, this.pathWidth, this.pathHeight) + this.startX; // shift on x axis with startX value
@@ -108,22 +108,31 @@ function random(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
 
-// Equation y = h * sin((2PI/w)y)
+// Equation x = h * sin((2PI/w)y)
 // Input y value and return x value
 function sinGraph(yValue: number, adjustedWaveHeight: number, adjustedWaveLength: number) {
   return adjustedWaveHeight * Math.sin(((2 * Math.PI) / adjustedWaveLength) * yValue);
 }
 
-export default function initAnimation() {
-  // Create snow flakes
-  const snowFlakes = [...Array(NUMBER_OF_SNOW_FLAKES).keys()].map(() => {
-    const imageElement = document.createElement('img') as HTMLImageElement;
-    return new SnowFlake(imageElement);
-  });
+export default function FallingSnow() {
+  const elementRef = useRef();
 
-  const bodyElement = document.getElementsByTagName('body')[0];
-  snowFlakes.forEach((snowFlake) => {
-    bodyElement.appendChild(snowFlake.imageElement);
-    snowFlake.startAnimation();
-  });
+  useEffect(() => {
+    // Create snow flakes
+    const snowFlakes = [...Array(NUMBER_OF_SNOW_FLAKES).keys()].map(() => {
+      const imageElement = document.createElement('img') as HTMLImageElement;
+      return new SnowFlake(imageElement);
+    });
+
+    snowFlakes.forEach((snowFlake) => {
+      (elementRef.current as Element).appendChild(snowFlake.imageElement);
+      snowFlake.startAnimation();
+    });
+
+  }, []);
+
+  return (
+    <div ref={elementRef} className='falling-snow-layer'>
+    </div>
+  );
 }

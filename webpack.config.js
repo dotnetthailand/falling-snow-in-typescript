@@ -4,17 +4,17 @@ const path = require('path');
 module.exports = {
   // https://webpack.js.org/configuration/entry-context/#entry
   entry: {
-    snow: './src/snow',
+    snow: './src/app',
   },
   mode: 'development', // check if we need it for hot reload
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]-bundle.js',
-    library: {
-      name: '[name]',
-      export: 'default',
-      type: 'umd'
-    }
+    // library: {
+    //   name: '[name]',
+    //   export: 'default',
+    //   type: 'umd'
+    // }
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
@@ -27,7 +27,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.html$/,
+        test: /\.html$/, // This does not work after the entry point is tsx
         use: [
           {
             loader: 'file-loader',
