@@ -17,8 +17,8 @@
 
 ## Equation
 
--   We think snowing has falling pattern like sin graph.
--   Let's start by plotting y = sin(x)
+- We think snowing has falling pattern like sin graph.
+- Let's start by plotting y = sin(x)
 
 ## y = sin(x)
 
@@ -69,11 +69,10 @@ If y equal 1, it takes half of PI period.
 ---
 
 # REF
-
--   [Inverse function](https://www.youtube.com/watch?v=zVG6MBFkiOo)
--   [Adjust amplitude and period](https://www.dummies.com/education/math/trigonometry/adjusting-the-period-of-a-sine-function/)
+- [Inverse function](https://www.youtube.com/watch?v=zVG6MBFkiOo)
+- [Adjust amplitude and period](https://www.dummies.com/education/math/trigonometry/adjusting-the-period-of-a-sine-function/)
 
 # Credit
-
--   Original code from [https://yagudaev.com/posts/snow-in-javascript/](https://yagudaev.com/posts/snow-in-javascript/)
--   [Master Off for explaining me the inversion function and sin graph](https://www.facebook.com/athum.thum)
+- Original code from [https://yagudaev.com/posts/snow-in-javascript/](https://yagudaev.com/posts/snow-in-javascript/)
+- [Master Off for explaining me the inversion function and sin graph](https://www.facebook.com/athum.thum)
+- https://stackoverflow.com/a/47367655/1872200

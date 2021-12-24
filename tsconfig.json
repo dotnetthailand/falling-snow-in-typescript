@@ -13,7 +13,8 @@
     "strict": true,
     "jsx": "react",
     "strictPropertyInitialization": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "types": ["@emotion/react/types/css-prop", "node"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]

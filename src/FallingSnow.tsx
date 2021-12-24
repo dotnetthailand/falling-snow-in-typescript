@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { css } from '@emotion/react'
 
 const MAX_SPEED = 10;
 const MIN_SPEED = 5;
@@ -114,25 +115,34 @@ function sinGraph(yValue: number, adjustedWaveHeight: number, adjustedWaveLength
   return adjustedWaveHeight * Math.sin(((2 * Math.PI) / adjustedWaveLength) * yValue);
 }
 
+const style = css`
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  outline: 1px solid red;
+`;
+
+// Create some snow flakes.
+const snowFlakes = [...Array(NUMBER_OF_SNOW_FLAKES).keys()].map(() => {
+  const imageElement = document.createElement('img') as HTMLImageElement;
+  return new SnowFlake(imageElement);
+});
+
 export default function FallingSnow() {
-  const elementRef = useRef();
+  const elementRef = useRef<HTMLDivElement>();
 
   useEffect(() => {
-    // Create snow flakes
-    const snowFlakes = [...Array(NUMBER_OF_SNOW_FLAKES).keys()].map(() => {
-      const imageElement = document.createElement('img') as HTMLImageElement;
-      return new SnowFlake(imageElement);
-    });
-
     snowFlakes.forEach((snowFlake) => {
-      (elementRef.current as Element).appendChild(snowFlake.imageElement);
+      elementRef.current.appendChild(snowFlake.imageElement);
       snowFlake.startAnimation();
     });
-
   }, []);
 
   return (
-    <div ref={elementRef} className='falling-snow-layer'>
-    </div>
+    <div ref={elementRef} className='falling-snow-layer' css={style}></div>
   );
 }
